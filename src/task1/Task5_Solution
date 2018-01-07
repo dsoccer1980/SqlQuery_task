@@ -1,0 +1,14 @@
+SELECT MAX(max_salary) FROM
+(
+SELECT SUM(empl1.salary) as max_salary, empl1.department_id
+FROM public."Employee" empl1
+GROUP BY empl1.department_id
+) AS salary_list
+
+
+
+SELECT empl1.department_id
+FROM public."Employee" empl1
+GROUP BY empl1.department_id
+ORDER BY SUM(empl1.salary) DESC
+LIMIT 1

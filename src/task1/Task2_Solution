@@ -1,0 +1,8 @@
+SELECT  empl1.name, empl1.salary, depart.name
+FROM public."Employee" empl1 LEFT JOIN  public."Department" depart
+  ON empl1.department_id=depart.id
+WHERE  empl1.salary=
+( SELECT  MAX(empl2.salary)
+ FROM public."Employee" empl2
+Where empl1.department_id=empl2.department_id
+ )
