@@ -1,0 +1,7 @@
+SELECT  empl1.name, empl1.salary
+FROM public."Employee" empl1
+WHERE empl1.salary>
+(
+SELECT  empl2.salary
+  FROM public."Employee" empl2
+  WHERE  empl1.chief_id=empl2.id

@@ -1,0 +1,16 @@
+https://habrahabr.ru/post/181033/
+
+развернута схема, содержащая следующие таблицы
+Department
+Id number PK
+Name Varchar2(100)
+
+Employee
+Id number PK
+Department_id number fk1(department.id)
+Chief_id number fk2(employee.id)
+Name Varchar2(100)
+Salary number
+
+Задание 1
+Вывести список сотрудников, получающих заработную плату большую чем у непосредственного руководителя
