@@ -1,0 +1,5 @@
+SELECT empl1.*
+FROM public."Employee" empl1
+LEFT JOIN public."Employee" empl2
+ON empl2.id=empl1.chief_id and empl2.department_id=empl1.department_id
+WHERE empl2.id is null
