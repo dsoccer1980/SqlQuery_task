@@ -1,4 +1,10 @@
 SELECT  empl1.name, empl1.salary
+FROM public."Employee" empl1, public."Employee" empl2
+WHERE empl1.chief_id=empl2.id
+      AND empl1.salary>empl2.salary
+
+
+SELECT  empl1.name, empl1.salary
 FROM public."Employee" empl1
 WHERE empl1.salary>
 (
